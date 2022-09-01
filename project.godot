@@ -6,89 +6,69 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
-_global_script_classes=[ {
-"base": "Reference",
-"class": "Attack",
-"language": "GDScript",
+_global_script_classes=[{
+"base": "RefCounted",
+"class": &"Attack",
+"language": &"GDScript",
 "path": "res://models/attack.gd"
 }, {
-"base": "Reference",
-"class": "AttackArea",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"AttackArea",
+"language": &"GDScript",
 "path": "res://models/attack_area.gd"
 }, {
-"base": "Reference",
-"class": "AttackRange",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"AttackRange",
+"language": &"GDScript",
 "path": "res://models/attack_range.gd"
 }, {
-"base": "Reference",
-"class": "AttackType",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"AttackType",
+"language": &"GDScript",
 "path": "res://models/attack_type.gd"
 }, {
-"base": "Reference",
-"class": "Character",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"Character",
+"language": &"GDScript",
 "path": "res://models/character.gd"
 }, {
-"base": "Reference",
-"class": "Dice",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"Dice",
+"language": &"GDScript",
 "path": "res://models/dice.gd"
 }, {
-"base": "RigidBody",
-"class": "DiceScene",
-"language": "GDScript",
-"path": "res://objects/Dice.gd"
-}, {
-"base": "Character",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://models/enemy.gd"
-}, {
 "base": "Container",
-"class": "EnemyPanel",
-"language": "GDScript",
+"class": &"EnemyPanel",
+"language": &"GDScript",
 "path": "res://objects/EnemyPanel.gd"
 }, {
 "base": "Node",
-"class": "Game",
-"language": "GDScript",
+"class": &"Game",
+"language": &"GDScript",
 "path": "res://Game.gd"
 }, {
-"base": "Reference",
-"class": "GameBuilder",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"GameBuilder",
+"language": &"GDScript",
 "path": "res://controls/game_builder.gd"
 }, {
-"base": "Reference",
-"class": "GamePhase",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"GamePhase",
+"language": &"GDScript",
 "path": "res://models/game.gd"
 }, {
-"base": "Control",
-"class": "IsoCube",
-"language": "GDScript",
-"path": "res://addons/IsoCube/IsoCube.gd"
-}, {
-"base": "Character",
-"class": "Player",
-"language": "GDScript",
-"path": "res://models/player.gd"
-}, {
 "base": "Container",
-"class": "PlayerPanel",
-"language": "GDScript",
+"class": &"PlayerPanel",
+"language": &"GDScript",
 "path": "res://objects/PlayerPanel.gd"
 }, {
-"base": "Reference",
-"class": "Power",
-"language": "GDScript",
+"base": "RefCounted",
+"class": &"Power",
+"language": &"GDScript",
 "path": "res://models/power.gd"
-} ]
+}]
 _global_script_class_icons={
 "Attack": "",
 "AttackArea": "",
@@ -96,14 +76,10 @@ _global_script_class_icons={
 "AttackType": "",
 "Character": "",
 "Dice": "",
-"DiceScene": "",
-"Enemy": "",
 "EnemyPanel": "",
 "Game": "",
 "GameBuilder": "",
 "GamePhase": "",
-"IsoCube": "",
-"Player": "",
 "PlayerPanel": "",
 "Power": ""
 }
@@ -112,6 +88,7 @@ _global_script_class_icons={
 
 config/name="DiceGame"
 run/main_scene="res://Menu.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
 [gui]
