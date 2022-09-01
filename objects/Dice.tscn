@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="BoxShape" id=3]
+margin = 0.001
+
+[sub_resource type="ShaderMaterial" id=4]
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 4 )
+
+[sub_resource type="Skin" id=2]
+
+[node name="Spatial" type="RigidBody"]
+mass = 3.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.1, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+mesh = SubResource( 1 )
+skin = SubResource( 2 )
+skeleton = NodePath("../..")
+
+[node name="Pivot" type="Spatial" parent="CollisionShape/MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )

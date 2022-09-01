@@ -1,0 +1,127 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://models/attack.gd"
+}, {
+"base": "Reference",
+"class": "AttackArea",
+"language": "GDScript",
+"path": "res://models/attack_area.gd"
+}, {
+"base": "Reference",
+"class": "AttackRange",
+"language": "GDScript",
+"path": "res://models/attack_range.gd"
+}, {
+"base": "Reference",
+"class": "AttackType",
+"language": "GDScript",
+"path": "res://models/attack_type.gd"
+}, {
+"base": "Reference",
+"class": "Character",
+"language": "GDScript",
+"path": "res://models/character.gd"
+}, {
+"base": "Reference",
+"class": "Dice",
+"language": "GDScript",
+"path": "res://models/dice.gd"
+}, {
+"base": "RigidBody",
+"class": "DiceScene",
+"language": "GDScript",
+"path": "res://objects/Dice.gd"
+}, {
+"base": "Character",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://models/enemy.gd"
+}, {
+"base": "Container",
+"class": "EnemyPanel",
+"language": "GDScript",
+"path": "res://objects/EnemyPanel.gd"
+}, {
+"base": "Node",
+"class": "Game",
+"language": "GDScript",
+"path": "res://Game.gd"
+}, {
+"base": "Reference",
+"class": "GameBuilder",
+"language": "GDScript",
+"path": "res://controls/game_builder.gd"
+}, {
+"base": "Reference",
+"class": "GamePhase",
+"language": "GDScript",
+"path": "res://models/game.gd"
+}, {
+"base": "Control",
+"class": "IsoCube",
+"language": "GDScript",
+"path": "res://addons/IsoCube/IsoCube.gd"
+}, {
+"base": "Character",
+"class": "Player",
+"language": "GDScript",
+"path": "res://models/player.gd"
+}, {
+"base": "Container",
+"class": "PlayerPanel",
+"language": "GDScript",
+"path": "res://objects/PlayerPanel.gd"
+}, {
+"base": "Reference",
+"class": "Power",
+"language": "GDScript",
+"path": "res://models/power.gd"
+} ]
+_global_script_class_icons={
+"Attack": "",
+"AttackArea": "",
+"AttackRange": "",
+"AttackType": "",
+"Character": "",
+"Dice": "",
+"DiceScene": "",
+"Enemy": "",
+"EnemyPanel": "",
+"Game": "",
+"GameBuilder": "",
+"GamePhase": "",
+"IsoCube": "",
+"Player": "",
+"PlayerPanel": "",
+"Power": ""
+}
+
+[application]
+
+config/name="DiceGame"
+run/main_scene="res://Menu.tscn"
+config/icon="res://icon.png"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

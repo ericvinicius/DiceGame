@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://images/dice/red/physical/wide/map.png" type="Texture" id=1]
+[ext_resource path="res://objects/EnemyPanel.gd" type="Script" id=2]
+[ext_resource path="res://images/players/default.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[node name="EnemyPanel" type="Container"]
+show_behind_parent = true
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+script = ExtResource( 2 )
+
+[node name="EnemyPanel" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_right = 300.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[node name="DicePanel" type="CenterContainer" parent="EnemyPanel" groups=["players"]]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -300.0
+margin_right = -218.0
+margin_bottom = 100.0
+
+[node name="Dice" type="TextureButton" parent="EnemyPanel/DicePanel" groups=["enemies"]]
+margin_left = 9.0
+margin_top = 18.0
+margin_right = 73.0
+margin_bottom = 82.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+texture_normal = SubResource( 2 )
+
+[node name="PicturePanel" type="CenterContainer" parent="EnemyPanel" groups=["players"]]
+margin_left = 231.0
+margin_right = 295.0
+margin_bottom = 100.0
+
+[node name="Picture" type="TextureButton" parent="EnemyPanel/PicturePanel" groups=["enemies"]]
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 82.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+texture_normal = ExtResource( 3 )
+
+[node name="StatusPanel" type="Panel" parent="EnemyPanel"]
+margin_left = 82.0
+margin_top = 30.0
+margin_right = 112.0
+margin_bottom = 90.0
+
+[node name="HealthPanel" type="GridContainer" parent="EnemyPanel"]
+margin_left = 119.0
+margin_top = 29.0
+margin_right = 224.0
+margin_bottom = 89.0
+columns = 5
+
+[node name="NamePanel" type="CenterContainer" parent="EnemyPanel"]
+margin_left = 64.0
+margin_right = 227.0
+margin_bottom = 20.0
+
+[node name="EnemyName" type="Label" parent="EnemyPanel/NamePanel"]
+margin_left = 81.0
+margin_top = 3.0
+margin_right = 81.0
+margin_bottom = 17.0
+
+[node name="EnemyClick" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 300.0
+margin_bottom = 100.0
+
+[connection signal="pressed" from="EnemyClick" to="." method="_on_EnemyClick_pressed"]
