@@ -17,6 +17,8 @@ func id():
 	self.name.to_lower()
 	
 func roll(value: int):
+	print(value)
+	print(self.dice.powers)
 	self.current_power = self.dice.powers[value-1]
 	return self.current_power
 	

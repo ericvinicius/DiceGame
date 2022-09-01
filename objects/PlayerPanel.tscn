@@ -1,80 +1,59 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://d1leysh5p61ri"]
 
-[ext_resource path="res://images/dice/red/physical/single/map.png" type="Texture" id=1]
-[ext_resource path="res://objects/PlayerPanel.gd" type="Script" id=2]
-[ext_resource path="res://images/players/default.png" type="Texture" id=3]
+[ext_resource type="Texture2D" uid="uid://k8xeut35k7yd" path="res://images/dice/red/physical/single/map.png" id="1"]
+[ext_resource type="Script" path="res://objects/PlayerPanel.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bd24xglp0g50j" path="res://images/players/default.png" id="3"]
 
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 64, 64)
 
 [node name="PlayerPanel" type="Container"]
-margin_right = 300.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 300, 100 )
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="PlayerPanel" type="ColorRect" parent="."]
-margin_right = 300.0
-margin_bottom = 100.0
+layout_mode = 2
 grow_horizontal = 2
 grow_vertical = 2
-color = Color( 0.196078, 0.196078, 0.196078, 1 )
+color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [node name="DicePanel" type="CenterContainer" parent="PlayerPanel" groups=["players"]]
-margin_left = 218.0
-margin_right = 300.0
-margin_bottom = 100.0
+layout_mode = 0
 
 [node name="Dice" type="TextureButton" parent="PlayerPanel/DicePanel"]
-margin_left = 9.0
-margin_top = 18.0
-margin_right = 73.0
-margin_bottom = 82.0
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
-enabled_focus_mode = 0
-texture_normal = SubResource( 1 )
+texture_normal = SubResource("1")
 
 [node name="PicturePanel" type="CenterContainer" parent="PlayerPanel" groups=["players"]]
-margin_left = 5.0
-margin_right = 69.0
-margin_bottom = 100.0
+layout_mode = 0
 
 [node name="Picture" type="TextureButton" parent="PlayerPanel/PicturePanel"]
-margin_top = 18.0
-margin_right = 64.0
-margin_bottom = 82.0
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
-enabled_focus_mode = 0
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource("3")
 
 [node name="HealthPanel" type="GridContainer" parent="PlayerPanel"]
-margin_left = 77.0
-margin_top = 30.0
-margin_right = 182.0
-margin_bottom = 90.0
+layout_mode = 0
 columns = 5
 
 [node name="StatusPanel" type="Panel" parent="PlayerPanel"]
-margin_left = 188.0
-margin_top = 30.0
-margin_right = 218.0
-margin_bottom = 90.0
+layout_mode = 0
 
 [node name="NamePanel" type="CenterContainer" parent="PlayerPanel"]
-margin_left = 64.0
-margin_right = 227.0
-margin_bottom = 22.0
+layout_mode = 0
 
 [node name="PlayerName" type="Label" parent="PlayerPanel/NamePanel"]
-margin_left = 81.0
-margin_top = 4.0
-margin_right = 81.0
-margin_bottom = 18.0
+layout_mode = 2
+offset_right = 1.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="PlayerPanel/DicePanel/Dice" to="." method="_on_Dice_pressed"]

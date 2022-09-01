@@ -1,0 +1,10 @@
+res://Menu.tscn
+res://objects/PlayerPanel.gd
+res://Game.tscn
+res://objects/CustomDice.tscn
+res://objects/DiceGround.tscn
+res://objects/PlayerPanel.tscn
+res://Game.gd
+res://objects/EnemyPanel.gd
+res://objects/DiceGround.gd
+res://objects/Dice.gd

@@ -4,14 +4,16 @@ extends Container
 
 signal dice_pressed
 
-var player: Player
+var player
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var dice_clicked: bool = false
 var move_to: Vector2
 var default_position: Vector2
 var with_position: bool = false
 
-func setup(player: Player):
+@onready var hp_panel: GridContainer = $PlayerPanel/HealthPanel
+
+func setup(player):
 	add_to_group("players")
 	self.player = player
 	return self
@@ -25,13 +27,12 @@ func _ready():
 	image.load("res://images/hearth/full.png")
 	var texture = ImageTexture.new()
 	texture.create_from_image(image)
-	$PlayerPanel/HealthPanel.add_constant_override("hseparation", 5)
-	$PlayerPanel/HealthPanel.add_constant_override("vseparation", 5)
+	
 	
 	for h in range(0, player.health):
 		var sprite = TextureRect.new()
 		sprite.set_texture(texture)
-		$PlayerPanel/HealthPanel.add_child(sprite)
+		hp_panel.add_child(sprite)
 
 
 func _on_Dice_pressed():

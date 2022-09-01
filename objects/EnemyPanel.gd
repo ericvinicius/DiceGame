@@ -31,8 +31,6 @@ func _ready():
 	self.texture_ep = ImageTexture.new()
 	texture_ep.create_from_image(image_ep)
 	
-	$EnemyPanel/HealthPanel.add_constant_override("hseparation", 5)
-	$EnemyPanel/HealthPanel.add_constant_override("vseparation", 5)
 	
 	for h in range(0, enemy.health):
 		var sprite = TextureRect.new()

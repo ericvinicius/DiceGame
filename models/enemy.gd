@@ -4,8 +4,8 @@ class_name Enemy
 
 var targets: Array
 
-func _init(name: String, health: int, armour: int, dice: Dice).(name, health, armour, dice):
-	pass
+func _init(name: String, health: int, armour: int, dice: Dice):
+	super(name, health, armour, dice)
 
 func add_target(player: Player):
 	self.targets.append(player)

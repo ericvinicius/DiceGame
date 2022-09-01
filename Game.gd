@@ -24,8 +24,8 @@ func create_players(players: Array):
 	var player_panel = preload("res://objects/PlayerPanel.tscn")
 	for idx in len(players):
 		var player: Player = players[idx]
-		var panel: PlayerPanel = player_panel.instance().setup(player)
-		self.connect("roll_pressed", panel, "_on_roll_pressed")
+		var panel: PlayerPanel = player_panel.instantiate().setup(player)
+		self.connect("roll_pressed", panel._on_roll_pressed)
 		$Game/PlayersBox.add_child(panel)
 		self.players_panels.append(panel)
 		
@@ -33,7 +33,7 @@ func create_enemies(enemies: Array):
 	var enemy_panel = preload("res://objects/EnemyPanel.tscn")
 	for idx in len(enemies):
 		var enemy: Enemy = enemies[idx]
-		var panel = enemy_panel.instance().setup(enemy)
+		var panel = enemy_panel.instantiate().setup(enemy)
 		$Game/EnemyBox.add_child(panel)
 
 func _on_MenuButton_pressed():
@@ -71,7 +71,7 @@ func attack_enemy(enemy_pos: int, enemy_panel: EnemyPanel):
 		if p.dice_clicked:
 			var die = p.player.attack(enemy_panel.enemy)
 			if die:
-				self.game.enemies.remove(enemy_pos)
+				self.game.enemies.erase(enemy_pos)
 				enemy_panel.destroy()
 			else:
 				enemy_panel.update_health()

@@ -1,6 +1,6 @@
-extends Spatial
+extends Node3D
 
-onready var camera = $Camera
+@onready var camera = $Camera
 
 var distance: float = 2.0
 var height: float = 5
@@ -17,7 +17,7 @@ func setup():
 	var game_scn = get_parent()
 	for p in game_scn.game.players:
 		var dice: Dice = p.dice
-		var dice_scn_obj = dice_scn.instance().setup(dice)
+		var dice_scn_obj = dice_scn.instantiate().setup(dice)
 		dice_scn_obj.get_transform().origin = Vector3(0, 3, 0)
 		self.add_child(dice_scn_obj)
 		dice_scn_obj.roll(5)

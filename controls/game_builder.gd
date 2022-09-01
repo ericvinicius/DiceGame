@@ -16,7 +16,8 @@ func create(difficult: int):
 	var at_s_m_5 = Power.new(2, physical, melee, wide)
 	var at_s_m_6 = Power.new(3, physical, melee, wide)
 	
-	var dice = Dice.new([at_s_m_1, at_s_m_2, at_s_m_3, at_s_m_4, at_s_m_5, at_s_m_6])
+	var powers: Array[Power] = [at_s_m_1, at_s_m_2, at_s_m_3, at_s_m_4, at_s_m_5, at_s_m_6]
+	var dice = Dice.new(powers)
 	
 	var eric = Player.new("Eric", 5, 0, dice)
 	var marcela = Player.new("Snow", 6, 0, dice)
@@ -26,6 +27,8 @@ func create(difficult: int):
 	var e1 = Enemy.new("Goblin 1", 5, 0, dice)
 	var e2 = Enemy.new("Goblin 2", 5, 0, dice)
 	
-	return GamePhase.new([eric, marcela, snow, rock], [e1, e2], difficult)
+	var ps: Array[Player] = [eric, marcela, snow, rock]
+	var es: Array[Enemy] = [e1, e2]
+	return GamePhase.new(ps, es, difficult)
 	
 	
